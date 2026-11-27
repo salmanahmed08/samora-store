@@ -67,7 +67,7 @@ export default async function HomePage() {
   return (
     <div className="w-full bg-[#F5F1EA]">
       {/* 1. Split Editorial Showcase Hero (Uncropped Visual Frame & Story) */}
-      <HeroSlider />
+      <HeroSlider categories={JSON.parse(JSON.stringify(categories))} />
 
       {/* 2. Signature Interactive Rope & Hanger Clothesline Slider (Placed right below Hero) */}
       {settings.hangerEnabled !== "false" && (
