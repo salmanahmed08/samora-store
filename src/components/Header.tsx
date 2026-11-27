@@ -177,8 +177,8 @@ export default function Header() {
           <div className="samora-forest-nav-left">
             <Link href="/" className={pathname === "/" ? "samora-forest-link is-active" : "samora-forest-link"}>HOME</Link>
             <Link href="/shop?sort=newest" className="samora-forest-link">NEW IN</Link>
-            <Link href="/shop?category=Hoodies" className="samora-forest-link">MEN</Link>
-            <Link href="/shop?category=Tees" className="samora-forest-link">WOMEN</Link>
+            <Link href="/shop" className="samora-forest-link">MEN</Link>
+            <Link href="/shop" className="samora-forest-link">WOMEN</Link>
             {shopDropdown}
           </div>
 
@@ -229,8 +229,8 @@ export default function Header() {
           </button>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>HOME <ArrowRight aria-hidden="true" /></Link>
           <Link href="/shop?sort=newest" onClick={() => setMobileMenuOpen(false)}>NEW IN <ArrowRight aria-hidden="true" /></Link>
-          <Link href="/shop?category=Hoodies" onClick={() => setMobileMenuOpen(false)}>MEN <ArrowRight aria-hidden="true" /></Link>
-          <Link href="/shop?category=Tees" onClick={() => setMobileMenuOpen(false)}>WOMEN <ArrowRight aria-hidden="true" /></Link>
+          <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>MEN <ArrowRight aria-hidden="true" /></Link>
+          <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>WOMEN <ArrowRight aria-hidden="true" /></Link>
           <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>SHOP <ArrowRight aria-hidden="true" /></Link>
           <Link href="/about" onClick={() => setMobileMenuOpen(false)}>ABOUT <ArrowRight aria-hidden="true" /></Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>CONTACT <ArrowRight aria-hidden="true" /></Link>
