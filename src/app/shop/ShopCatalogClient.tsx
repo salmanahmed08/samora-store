@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { formatPKR, buildWhatsAppLink } from "@/lib/utils";
 import {
@@ -32,11 +33,16 @@ interface Product {
 
 export default function ShopCatalogClient({ initialProducts }: { initialProducts: Product[] }) {
   const { addItem } = useCart();
+  const searchParams = useSearchParams();
 
-  const [category, setCategory] = useState("ALL");
+  const [category, setCategory] = useState(searchParams.get("category") || "ALL");
   const [selectedSize, setSelectedSize] = useState("ALL");
   const [priceRange, setPriceRange] = useState("ALL");
   const [sortOption, setSortOption] = useState("newest");
+
+  useEffect(() => {
+    setCategory(searchParams.get("category") || "ALL");
+  }, [searchParams]);
 
   const categories = [
     { label: "All Items", value: "ALL" },
