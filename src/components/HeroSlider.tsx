@@ -72,7 +72,7 @@ export default function HeroSlider({ categories = [] }: HeroSliderProps) {
     (categories.length > 0 ? categories : FALLBACK_CATEGORIES).slice(0, 4);
 
   return (
-    <section className="samora-forest-hero" aria-labelledby="samora-forest-title">
+    <section className="samora-forest-hero" aria-labelledby="samora-forest-title" data-active-category-count={categories.length}>
       <div className="samora-forest-hero-main">
         <div className="samora-forest-atmosphere" aria-hidden="true" />
         <div className="samora-forest-wordmark-bg" aria-hidden="true">
