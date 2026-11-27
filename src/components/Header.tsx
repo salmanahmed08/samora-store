@@ -162,7 +162,7 @@ export default function Header() {
           </div>
 
           <div className="samora-actions">
-            <button type="button" onClick={openSearch} className="samora-icon-button" aria-label="Search collection" title="Search collection">
+            <button type="button" onClick={openSearch} className="samora-icon-button samora-search" aria-label="Search collection" title="Search collection">
               <Search />
               <span className="samora-action-label">SEARCH</span>
             </button>
@@ -188,7 +188,7 @@ export default function Header() {
                 <ArrowRight aria-hidden="true" />
               </Link>
             ))}
-            <div className="samora-mobile-collections">
+            <Link href="/shop?filter=saved" onClick={() => setMobileMenuOpen(false)}>SAVED ITEMS <Heart aria-hidden="true" /></Link>\n            <Link href="/track-order" onClick={() => setMobileMenuOpen(false)}>TRACK ORDER <ArrowRight aria-hidden="true" /></Link>\n            <div className="samora-mobile-collections">
               <span>COLLECTIONS</span>
               {["Clothing", "Bags", "Footwear", "Accessories"].map((name) => (
                 <Link key={name} href={`/shop?category=${encodeURIComponent(name)}`} onClick={() => setMobileMenuOpen(false)}>{name}</Link>
