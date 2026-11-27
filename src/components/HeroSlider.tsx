@@ -6,7 +6,8 @@ import { ArrowRight, MoveUpRight } from "lucide-react";
 interface HeroCategory {
   id: string;
   name: string;
-  slug: string;
+  slug?: string;
+  shopValue?: string;
 }
 
 interface HeroSliderProps {
@@ -20,8 +21,15 @@ const CATEGORY_VISUALS = [
   "/assets/editorial-hoodies/hoodie-editorial-05.jpeg",
 ];
 
+const FALLBACK_CATEGORIES: HeroCategory[] = [
+  { id: "hoodies", name: "Hoodies", shopValue: "Hoodies" },
+  { id: "tees", name: "T-Shirts", shopValue: "Tees" },
+  { id: "pants", name: "Pants & Cargos", shopValue: "Pants" },
+  { id: "accessories", name: "Accessories", shopValue: "Accessories" },
+];
+
 export default function HeroSlider({ categories = [] }: HeroSliderProps) {
-  const featuredCategories = categories.slice(0, 4);
+  const featuredCategories = (categories.length > 0 ? categories : FALLBACK_CATEGORIES).slice(0, 4);
 
   return (
     <section className="samora-home-hero" aria-labelledby="samora-hero-title">
@@ -88,7 +96,7 @@ export default function HeroSlider({ categories = [] }: HeroSliderProps) {
             {featuredCategories.map((category, index) => (
               <Link
                 key={category.id}
-                href={`/shop?category=${encodeURIComponent(category.name)}`}
+                href={`/shop?category=${encodeURIComponent(category.shopValue || category.name)}`}
                 className="samora-category-card"
               >
                 <img
