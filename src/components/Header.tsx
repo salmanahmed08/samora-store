@@ -11,6 +11,9 @@ import {
   ChevronDown,
   ArrowRight,
   Heart,
+  Instagram,
+  Facebook,
+  MessageCircle,
 } from "lucide-react";
 import { useCart } from "./CartContext";
 import { BRAND_CONTACT } from "@/lib/brand-assets";
@@ -99,7 +102,50 @@ export default function Header() {
   return (
     <header className="samora-header sticky top-0 z-40 w-full">
       <div className="samora-announcement">
-        <span>COMPLIMENTARY SHIPPING ON SELECT ORDERS</span>
+        <span className="samora-announcement-copy">
+          COMPLIMENTARY SHIPPING ON SELECT ORDERS
+        </span>
+
+        <div className="samora-social-links" aria-label="Connect with SAMORA">
+          <a
+            href="https://www.instagram.com/samorapk2008/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="samora-social-link"
+            aria-label="SAMORA on Instagram"
+            title="Instagram"
+          >
+            <Instagram aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61593252326408"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="samora-social-link"
+            aria-label="SAMORA on Facebook"
+            title="Facebook"
+          >
+            <Facebook aria-hidden="true" />
+          </a>
+          <a
+            href="https://wa.me/923344826415"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="samora-social-link samora-social-whatsapp"
+            aria-label="Chat with SAMORA on WhatsApp at +92 334 482 6415"
+            title="WhatsApp"
+          >
+            <MessageCircle aria-hidden="true" />
+          </a>
+          <a
+            href="https://wa.me/923344826415"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="samora-whatsapp-number"
+          >
+            +92 334 482 6415
+          </a>
+        </div>
       </div>
 
       <nav
